@@ -1,0 +1,30 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on  Ahmed AL-Jabri</title>
+        <link>https://ahmed-aljabri.github.io/posts/</link>
+        <description>Recent content in Posts on  Ahmed AL-Jabri</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+        <lastBuildDate>Sat, 04 Jun 2022 20:16:50 +0100</lastBuildDate>
+        <atom:link href="https://ahmed-aljabri.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Welcome</title>
+            <link>https://ahmed-aljabri.github.io/posts/welcome/</link>
+            <pubDate>Sat, 04 Jun 2022 20:16:50 +0100</pubDate>
+            
+            <guid>https://ahmed-aljabri.github.io/posts/welcome/</guid>
+            <description>MD is cool
+public static void main(String args []){ System.out.println(&amp;#34;This is a test post!&amp;#34;); } </description>
+            <content type="html"><![CDATA[<p><em>MD is cool</em></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java">  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String args <span style="color:#f92672">[]){</span>
+
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;This is a test post!&#34;</span><span style="color:#f92672">);</span>
+  <span style="color:#f92672">}</span>
+
+</code></pre></div>]]></content>
+        </item>
+        
+    </channel>
+</rss>
