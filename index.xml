@@ -7,14 +7,41 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 04 Jun 2022 20:16:50 +0100</lastBuildDate><atom:link href="https://ahmed-aljabri.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Jun 2022 21:17:28 +0100</lastBuildDate><atom:link href="https://ahmed-aljabri.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Write-up1</title>
+      <link>https://ahmed-aljabri.github.io/writings/write-up1/</link>
+      <pubDate>Fri, 10 Jun 2022 21:17:28 +0100</pubDate>
+      
+      <guid>https://ahmed-aljabri.github.io/writings/write-up1/</guid>
+      <description>Coming soon &amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://ahmed-aljabri.github.io/about/</link>
+      <pubDate>Wed, 08 Jun 2022 00:06:15 +0100</pubDate>
+      
+      <guid>https://ahmed-aljabri.github.io/about/</guid>
+      <description>About me page</description>
+    </item>
+    
     <item>
       <title>Dethroning TCP in the Web</title>
       <link>https://ahmed-aljabri.github.io/posts/welcome/</link>
-      <pubDate>Sat, 04 Jun 2022 20:16:50 +0100</pubDate>
+      <pubDate>Tue, 07 Jun 2022 23:48:06 +0100</pubDate>
       
       <guid>https://ahmed-aljabri.github.io/posts/welcome/</guid>
       <description>public Static void main(String args[]){ System.out.println(&amp;#34;comming soon! ...&amp;#34;); } </description>
+    </item>
+    
+    <item>
+      <title>DNS Privacy Concerns</title>
+      <link>https://ahmed-aljabri.github.io/posts/dnsprivacy/</link>
+      <pubDate>Sun, 05 Jun 2022 23:48:06 +0100</pubDate>
+      
+      <guid>https://ahmed-aljabri.github.io/posts/dnsprivacy/</guid>
+      <description>Coming soon.</description>
     </item>
     
   </channel>
