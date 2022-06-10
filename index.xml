@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 10 Jun 2022 21:17:28 +0100</lastBuildDate><atom:link href="https://ahmed-aljabri.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Jun 2022 00:27:19 +0100</lastBuildDate><atom:link href="https://ahmed-aljabri.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test2</title>
+      <link>https://ahmed-aljabri.github.io/posts/test2/</link>
+      <pubDate>Sat, 11 Jun 2022 00:27:19 +0100</pubDate>
+      
+      <guid>https://ahmed-aljabri.github.io/posts/test2/</guid>
+      <description>hello world</description>
+    </item>
+    
     <item>
       <title>Write-up1</title>
       <link>https://ahmed-aljabri.github.io/writings/write-up1/</link>
