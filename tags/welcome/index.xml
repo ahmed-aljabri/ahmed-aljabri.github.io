@@ -14,7 +14,8 @@
       <pubDate>Tue, 07 Jun 2022 23:48:06 +0100</pubDate>
       
       <guid>https://ahmed-aljabri.github.io/posts/welcome/</guid>
-      <description>public Static void main(String args[]){ System.out.println(&amp;#34;comming soon! ...&amp;#34;); } </description>
+      <description>prerequisites The reader should have some understanding of basic networking concepts such as the OSI protocol layers, how the web and in particular HTTP works.
+ Abstract Ever since Tim Burners-Lee created the World Wide Web, TCP has been the main and in most cases the only option providing reliable transport to web exchanges. Understandably, TCP was the obvious option since web exchanges required reliability to exchange web content. However as HTTP continued to evolve throughout the years to fit the needs of the evolving web, TCP&amp;rsquo;s limitations became more evident.</description>
     </item>
     
   </channel>
