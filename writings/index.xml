@@ -7,15 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 10 Jun 2022 21:17:28 +0100</lastBuildDate><atom:link href="https://ahmed-aljabri.github.io/writings/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 17 Aug 2022 13:53:17 +0100</lastBuildDate><atom:link href="https://ahmed-aljabri.github.io/writings/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Write-up1</title>
-      <link>https://ahmed-aljabri.github.io/writings/write-up1/</link>
-      <pubDate>Fri, 10 Jun 2022 21:17:28 +0100</pubDate>
+      <title>Dissertation</title>
+      <link>https://ahmed-aljabri.github.io/writings/dessertation/</link>
+      <pubDate>Wed, 17 Aug 2022 13:53:17 +0100</pubDate>
       
-      <guid>https://ahmed-aljabri.github.io/writings/write-up1/</guid>
-      <description> Coming soon
- </description>
+      <guid>https://ahmed-aljabri.github.io/writings/dessertation/</guid>
+      <description>Title: Investigating the effectiveness of major Internet protocols in addressing DNS privacy concerns. In this paper I investigate a recent and ongoing problem of DNS privacy. The paper covers in depth analysis of the current issue with DNS privacy, why it is a problem and what the community has proposed to address this issue. As the investigation progresses I explain the underlying technologies that the proposed solutions contain and critically analyse and compare their performances using established machine learning methods.</description>
     </item>
     
   </channel>
