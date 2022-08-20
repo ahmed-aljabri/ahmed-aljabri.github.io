@@ -19,10 +19,10 @@
     
     <item>
       <title>Dethroning TCP in the Web</title>
-      <link>https://ahmed-aljabri.github.io/posts/welcome/</link>
+      <link>https://ahmed-aljabri.github.io/posts/dethroningtcpintheweb/</link>
       <pubDate>Tue, 02 Aug 2022 23:48:06 +0100</pubDate>
       
-      <guid>https://ahmed-aljabri.github.io/posts/welcome/</guid>
+      <guid>https://ahmed-aljabri.github.io/posts/dethroningtcpintheweb/</guid>
       <description>prerequisites The reader should have some understanding of basic networking concepts such as the OSI protocol layers, how the web and in particular HTTP works.
  Abstract Ever since Tim Burners-Lee created the World Wide Web, TCP has been the main and in most cases the only option providing reliable transport to web exchanges. Understandably, TCP was the obvious option since web exchanges required reliability to exchange web content. However as HTTP continued to evolve throughout the years to fit the needs of the evolving web, TCP&amp;rsquo;s limitations became more evident.</description>
     </item>
