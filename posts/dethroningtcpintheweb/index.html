@@ -41,7 +41,7 @@
 <meta itemprop="name" content="Dethroning TCP in the Web">
 <meta itemprop="description" content="How the emergence of QUIC and HTTP/3 changes the web as we know it."><meta itemprop="datePublished" content="2022-08-13T23:48:06+01:00" />
 <meta itemprop="dateModified" content="2022-08-13T23:48:06+01:00" />
-<meta itemprop="wordCount" content="2056"><meta itemprop="image" content="https://ahmed-aljabri.github.io/"/>
+<meta itemprop="wordCount" content="2060"><meta itemprop="image" content="https://ahmed-aljabri.github.io/"/>
 <meta itemprop="keywords" content="QUIC,TCP,Networking,HTTP3,Multiplexing," />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://ahmed-aljabri.github.io/"/>
@@ -154,11 +154,14 @@
       
 
       <div class="post-content">
-        <h4 id="prerequisites">prerequisites</h4>
+        <blockquote>
+<p><strong>Latest Revision</strong>: 03/09/2022</p>
+</blockquote>
+<h4 id="prerequisites">prerequisites</h4>
 <p>The reader should have some understanding of basic networking concepts such as the OSI protocol layers, how the web and in particular HTTP works.</p>
 <hr>
 <h2 id="abstract">Abstract</h2>
-<p>Ever since Tim Burners-Lee created the World Wide Web, TCP has been the main and in most cases the only option providing reliable transport to web exchanges. Understandably, TCP was the obvious option since web exchanges required reliability to exchange web content. However as HTTP continued to evolve throughout the years to fit the needs of the evolving web, TCP&rsquo;s limitations became more evident. Up until recently when HTTP/3 officially marked a new era for web transport, TCP is swapped out of the HTTP protocol stack for QUIC which operates on top of UDP. Consequently, as implementations of HTTP/3 increase to reap the benefits of this latest version of HTTP, QUIC and UDP are set to gradually dethrone TCP as the web&rsquo;s most dominant transport protocol.</p>
+<p>Ever since Tim Burners-Lee created the World Wide Web, TCP has been the main and in most cases the only option providing reliable transport to web exchanges. Understandably, TCP was the obvious option since web exchanges required reliability to exchange web content. However as HTTP continued to evolve throughout the years to fit the needs of the evolving web, TCP&rsquo;s limitations continued to prevail. Up until recently when HTTP/3 officially marked a new era for web transport, TCP is swapped out of the HTTP protocol stack for QUIC which operates on top of UDP. Consequently, as implementations of HTTP/3 increase to reap the benefits of this latest version of HTTP, QUIC and UDP are set to gradually dethrone TCP as the web&rsquo;s most dominant transport protocol.</p>
 <h2 id="introduction">Introduction</h2>
 <p>As we have always known the web, the Transport Control Protocol (<a href="https://www.cloudflare.com/en-gb/learning/ddos/glossary/tcp-ip/">TCP</a>) has mainly been the appropriate transport
 protocol to use for <a href="https://www.cloudflare.com/en-gb/learning/ddos/glossary/hypertext-transfer-protocol-http/">HTTP</a> exchanges. Given the limited number of well
@@ -221,7 +224,7 @@ result, data in independent HTTP2 streams at the application layer will be inter
 assigning each image an independent stream as illustrated above. Nevertheless, when those streams are passed down to the transport layer, TCP will interpret all of the individual streams
 as one. Therefore, at the receiving end the server will not be able to process any of the image requests until all
 requests have successfully arrived. In the figure above we see that images A, B and C although assigned independent streams by HTTP, are all sent as one stream of bytes and as a result when image A experienced some loss in transmission, the entire stream (containing all three images) waits for the retransmission before being processed at the receiving end. This limitation is referred to as <strong>head-of-line-blocking</strong> and as a consequence, this slows down the processing at the receiving end which limits the ability of HTTP2 to realize all it&rsquo;s intended performance benefits.</p>
-<p>At this stage, we understand that for the web to continue to enhance it&rsquo;s performance, the focus needs to shift from the application layer to the transport layer where the main imitation lies. And hence, potential solutions to overcome this limitation were mainly among two theoretical options. One, to improve
+<p>At this stage, we understand that for the web to continue to enhance it&rsquo;s performance, the focus needs to shift from the application layer to the transport layer where the main limitation lies. And hence, potential solutions to overcome this limitation were mainly among two theoretical options. One, to improve
 TCP’s implementation so that multiplexing is supported at the transport layer. Two, to develop a new “transport”
 protocol that will understand the concept of streams and implement multiplexing.</p>
 <p>It might first seem that enhancing an established protocol is the more efficient and reasonable solution rather than
@@ -229,8 +232,7 @@ developing one from scratch. However in this case it is in fact the opposite. TC
 that has been used in the internet for over 40 years, to introduce a major change to such an established protocol
 would practically mean to change TCP’s implementation in major vendors system’s kernals. This would also include
 deploying changes to middle-boxes across the internet and not just end-systems which is simply not practical in
-today&rsquo;s networks. This issue is often referred to as “Ossification” which is a topic in itself that will be discussed in a
-future blog post.</p>
+today&rsquo;s networks. This issue is often referred to as “Ossification” which is a topic in itself that deserves a dedicated blog post.</p>
 <h2 id="emergence-of-quic">Emergence of QUIC</h2>
 <p>Due to the limitations described above, development efforts kicked off at Google in 2013 to develop a
 new transport protocol which we know today as QUIC. The initial efforts centered around developing a multiplexed
@@ -240,8 +242,8 @@ transport protocol that will further enhance HTTP&rsquo;s performance. Later in 
 <p>Note: QUIC has other additional features such as connection migration, 0-RTT, embedded TLS1.3 and more that this post does not delve deep into as they are not directly related to the current topic.</p>
 </blockquote>
 <p><img src="/img/HTTP3Streams.drawio.png" alt="QUIC stream perspective"></p>
-<p>The illustration above shows how QUIC is designed to be capable of multiplexing at the transport layer. When each of the HTTP streams are passed down to QUIC, independent <strong>QUIC Streams</strong> are assigned at the transport layer which allows the receiving end to distinguish between the incoming streams hence, being able to process and respond to them independently as soon as soon as they arrive thereby achieving the full benefits of multiplexing. Comparing this to the previous example in HTTP2, QUIC can assign each of the images an independent stream and so if one stream relating to image A is affected, only that stream awaits retransmission while streams of image B and C are processed therefore avoiding the head-of-line blocking problem with TCP.</p>
-<p>With that capability to multiplex at the transport layer, HTTP3 is now officially a standard protocol (<a href="https://datatracker.ietf.org/doc/html/rfc9114">RFC 9114</a>) that swaps out TCP from the protocol suite for QUIC and UDP. Performance tests have showed that in high speed networks with low packet loss rates the performance gains are insignificant (in milliseconds) while on low performance networks QUIC out-preforms older TCP implementations by a margin (see <a href="https://research.google/pubs/pub46403/">this</a> paper).</p>
+<p>The illustration above shows how QUIC is designed to be capable of multiplexing at the transport layer. When each of the HTTP streams are passed down to QUIC, independent <strong>QUIC Streams</strong> are assigned at the transport layer which allows the receiving end to distinguish between the incoming streams and consequently, be able to process and respond to them independently as soon as soon as they arrive thereby achieving the full benefits of multiplexing. Comparing this to the previous example in HTTP2, QUIC can assign each of the images an independent stream and so if one stream relating to image A is affected, only that stream awaits retransmission while streams of image B and C are processed therefore avoiding the head-of-line blocking problem with TCP.</p>
+<p>With that capability to multiplex at the transport layer, HTTP3 is now officially a standard protocol (<a href="https://datatracker.ietf.org/doc/html/rfc9114">RFC 9114</a>) that swaps out TCP from the protocol suite for QUIC and UDP. Performance tests have showed that in high speed networks with low packet loss rates the performance gains are insignificant while on low performance networks with higher packet loss rates, QUIC out-preforms older TCP implementations by notable margins (see <a href="https://research.google/pubs/pub46403/">this</a> paper).</p>
 <h2 id="final-thoughts">Final thoughts</h2>
 <p>In summary, with the standardisation of HTTP3, a major shift takes place within the underlying technologies that allowed the web to operate as we know for decades. Although the main protocol that is synonymous with the web (HTTP) remains relatively unchanged from HTTP2 to HTTP3, TCP is no longer the transport protocol for web exchanges. Instead, QUIC on top of UDP replaces TCP at the transport layer which highlights a few final points:</p>
 <ul>
@@ -249,7 +251,7 @@ transport protocol that will further enhance HTTP&rsquo;s performance. Later in 
 <p>As the complexity of webpages continue to grow, more transitions to deploy HTTP3 are expected to gain more performance. This would consequently mean that slowly but eventually TCP will no longer be the most dominant transport protocol <strong>in the web domain</strong> and QUIC on top of UDP will take its place. In fact in 2017, way before QUIC was standardized, 7% of internet traffic was running on QUIC according to Google who themselves implemented it. A more recent statistic shows that the figure has risen to 12% midway through 2021.</p>
 </li>
 <li>
-<p>This begins a new era in the web domain where TCP is no longer synonymous with HTTP, QUIC provides a way of having reliable and secure transport features without having to take the performance burden of legacy technologies such as TCP.</p>
+<p>This begins a new era in the web domain where TCP is no longer synonymous with HTTP, QUIC provides a way of having reliable and secure transport features without having to take the performance burdens of legacy technologies such as TCP.</p>
 </li>
 <li>
 <p>With QUIC being standardized as an independent transport protocol, we are set to see other application layer protocols that value latency and other metrics of performance move to QUIC such as DNS. This is a promising area to watch out for as other domains outside the web start to consider the move to QUIC.</p>
@@ -284,7 +286,7 @@ transport protocol that will further enhance HTTP&rsquo;s performance. Later in 
           <line x1="16" y1="17" x2="8" y2="17"></line>
           <polyline points="10 9 9 9 8 9"></polyline>
         </svg>
-        2056 Words
+        2060 Words
       </p>
 
       <p>
