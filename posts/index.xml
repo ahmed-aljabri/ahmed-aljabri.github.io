@@ -30,7 +30,7 @@
  prerequisites The reader should have some understanding of basic networking concepts such as the OSI protocol layers, how the web and in particular HTTP works.
  Abstract Ever since Tim Burners-Lee created the World Wide Web, TCP has been the main and in most cases the only option providing reliable transport to web exchanges. Understandably, TCP was the obvious option since web exchanges required reliability to exchange web content.</description>
             <content type="html"><![CDATA[<blockquote>
-<p><strong>Latest Revision</strong>: 03/09/2022</p>
+<p><strong>Latest Revision: 03/09/2022</strong></p>
 </blockquote>
 <h4 id="prerequisites">prerequisites</h4>
 <p>The reader should have some understanding of basic networking concepts such as the OSI protocol layers, how the web and in particular HTTP works.</p>
