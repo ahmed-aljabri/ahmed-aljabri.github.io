@@ -19,5 +19,16 @@
  Abstract Ever since Tim Burners-Lee created the World Wide Web, TCP has been the main and in most cases the only option providing reliable transport to web exchanges. Understandably, TCP was the obvious option since web exchanges required reliability to exchange web content.</description>
     </item>
     
+    <item>
+      <title>#1 Dethroning TCP from The Web</title>
+      <link>https://ahmed-aljabri.github.io/posts/dethroningtcpfromtheweb/</link>
+      <pubDate>Sat, 13 Aug 2022 13:44:46 +0000</pubDate>
+      
+      <guid>https://ahmed-aljabri.github.io/posts/dethroningtcpfromtheweb/</guid>
+      <description>Latest Revision: 03/09/2022
+ prerequisites The reader should have some understanding of basic networking concepts such as the OSI protocol layers, how the web and in particular HTTP works.
+ Abstract Ever since Tim Burners-Lee created the World Wide Web, TCP has been the main and in most cases the only option providing reliable transport to web exchanges. Understandably, TCP was the obvious option since web exchanges required reliability to exchange web content.</description>
+    </item>
+    
   </channel>
 </rss>
