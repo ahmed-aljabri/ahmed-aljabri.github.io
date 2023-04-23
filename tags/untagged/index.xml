@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
+<<<<<<< HEAD
     <title>untagged on Welcome!</title>
     <link>https://ahmed-aljabri.github.io/tags/untagged/</link>
     <description>Recent content in untagged on Welcome!</description>
@@ -15,6 +16,22 @@
       
       <guid>https://ahmed-aljabri.github.io/posts/dnsprivacy/</guid>
       <description>Coming soon</description>
+=======
+    <title>untagged on AHMED AL-JABRI</title>
+    <link>https://ahmed-aljabri.github.io/tags/untagged/</link>
+    <description>Recent content in untagged on AHMED AL-JABRI</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Tue, 06 Sep 2022 13:47:52 +0000</lastBuildDate><atom:link href="https://ahmed-aljabri.github.io/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Testpost</title>
+      <link>https://ahmed-aljabri.github.io/posts/testpost/</link>
+      <pubDate>Tue, 06 Sep 2022 13:47:52 +0000</pubDate>
+      
+      <guid>https://ahmed-aljabri.github.io/posts/testpost/</guid>
+      <description>hello there!</description>
+>>>>>>> 5963e0d7429425ca8f1cb1af9489b7c7e948f3e5
     </item>
     
   </channel>
