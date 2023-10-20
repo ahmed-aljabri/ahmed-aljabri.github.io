@@ -1,0 +1,28 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on AHMED AL-JABRI</title>
+        <link>http://ahmed-aljabri.github.io/posts/</link>
+        <description>Recent content in Posts on AHMED AL-JABRI</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+        <lastBuildDate>Fri, 20 Oct 2023 10:28:10 +0400</lastBuildDate>
+        <atom:link href="http://ahmed-aljabri.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Testpost</title>
+            <link>http://ahmed-aljabri.github.io/posts/testpost/</link>
+            <pubDate>Fri, 20 Oct 2023 10:28:10 +0400</pubDate>
+            
+            <guid>http://ahmed-aljabri.github.io/posts/testpost/</guid>
+            <description>fn main() { println!(&amp;#34;Testing initial post&amp;#34;); } </description>
+            <content type="html"><![CDATA[<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Rust" data-lang="Rust"><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
+
+    println!(<span style="color:#e6db74">&#34;Testing initial post&#34;</span>);
+}
+
+</code></pre></div>]]></content>
+        </item>
+        
+    </channel>
+</rss>
