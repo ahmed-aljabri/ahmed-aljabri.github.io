@@ -1,3 +1,3 @@
 # Personal Blog Site
 
-This repo contains my statically generated personal site (ahmedaljabri.blog).
+This repo contains my statically generated site (ahmedaljabri.blog).
