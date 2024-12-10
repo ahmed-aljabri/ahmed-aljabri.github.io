@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AHMED AL-JABRI</title>
-    <link>http://ahmed-aljabri.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on AHMED AL-JABRI</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Sat, 23 Dec 2023 10:23:33 +0400</lastBuildDate>
-    <atom:link href="http://ahmed-aljabri.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dethroning TCP From The Web?</title>
-      <link>http://ahmed-aljabri.github.io/posts/dethroningtcpfromtheweb/</link>
+      <link>http://localhost:1313/posts/dethroningtcpfromtheweb/</link>
       <pubDate>Sat, 23 Dec 2023 10:23:33 +0400</pubDate>
-      <guid>http://ahmed-aljabri.github.io/posts/dethroningtcpfromtheweb/</guid>
-      <description>Latest Revision: 27th of December&#xA;prerequisites The reader should have some understanding of basic networking concepts such as the OSI protocol layers, how the web and in particular HTTP works.&#xA;Introduction Ever since Tim Burners-Lee created the World Wide Web, the Transport Control Protocol (TCP) has been the main and up until very recently, the most obvious option for transporting Hypertext Transfer Protocol (HTTP) web exchanges. Understandably, TCP was the transport protocol of choice given that the available options were limited between UDP and TCP, where UDP alone is a lightweight protocol that misses most of the features that the web desires.</description>
+      <guid>http://localhost:1313/posts/dethroningtcpfromtheweb/</guid>
+      <description>The emergence of QUIC and HTTP3 discussing their influence on the operation of the web domain.</description>
     </item>
     <item>
       <title>About me</title>
-      <link>http://ahmed-aljabri.github.io/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Sat, 21 Oct 2023 18:19:55 +0400</pubDate>
-      <guid>http://ahmed-aljabri.github.io/about/</guid>
-      <description>My name is Ahmed Al-Jabri, in recent years I completed degrees in Computer Science &amp;amp; Cybersecurity. My main areas of interest are Computer Systems and Networking, Distributed Systems and Secure Programming.&#xA;The intention behind this site is to share a personal blog which will cover a range of technologies, share my thoughts and present technological deep-dives on various topics of interest. You might also find posts discussing ideas and designs for some of my software projects on github.</description>
+      <guid>http://localhost:1313/about/</guid>
+      <description>&lt;p&gt;My name is Ahmed Al-Jabri, in recent years I completed degrees in Computer Science &amp;amp; Cybersecurity. My main areas of interest are Computer Systems and Networking, Distributed Systems and Secure Programming.&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;&#xA;&lt;p&gt;The intention behind this site is to share a personal blog which will cover a range of technologies, share my thoughts and present technological deep-dives on various topics of interest. You might also find posts discussing ideas and designs for some of my software projects on github.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
