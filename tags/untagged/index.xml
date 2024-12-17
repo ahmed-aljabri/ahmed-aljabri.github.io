@@ -7,12 +7,12 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Mon, 16 Dec 2024 11:46:21 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Dec 2024 17:23:15 +0000</lastBuildDate>
     <atom:link href="https://ahmedaljabri.blog/tags/untagged/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Transport Layer Ossification</title>
       <link>https://ahmedaljabri.blog/posts/tlo/</link>
-      <pubDate>Mon, 16 Dec 2024 11:46:21 +0000</pubDate>
+      <pubDate>Tue, 17 Dec 2024 17:23:15 +0000</pubDate>
       <guid>https://ahmedaljabri.blog/posts/tlo/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;I was first introduced to the ’Transport Layer Ossification’ (TLO) phenomenon when I watched a recorded&#xA;presentation by ex-google software engineer Jana Iyengar. In that session, the agenda was mainly around&#xA;QUIC, a new multiplexed transport protocol that was initially designed to enhance the web’s performance and&#xA;in particular HTTP. However QUIC later evolved to be an independent transport protocol that could support&#xA;other domains not just the web. Nevertheless, Jana started by highlighting some context before talking about&#xA;QUIC and in particular the challenges faced when attempting to deploy the Stream Control Transport Protocol&#xA;(SCTP), during that segment Jana explained how middleboxes are powerful enough that they have ossified the&#xA;transport layer making it near impossible to deploy new functional transport protocols. From there I became&#xA;curious to learn about TLO in depth, understand the direct implications on modern-day networks and the&#xA;potential workarounds.&lt;/p&gt;</description>
     </item>
