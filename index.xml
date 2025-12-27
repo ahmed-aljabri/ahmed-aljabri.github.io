@@ -2,33 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AHMED AL-JABRI</title>
-    <link>http://localhost:1313/</link>
+    <link>http://ahmed-aljabri.github.io/</link>
     <description>Recent content on AHMED AL-JABRI</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Tue, 17 Dec 2024 11:08:14 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Curriculum Vitae</title>
-      <link>http://localhost:1313/cv/</link>
-      <pubDate>Tue, 17 Dec 2024 11:08:14 +0000</pubDate>
-      <guid>http://localhost:1313/cv/</guid>
-      <description>&lt;hr&gt;&#xA;&lt;h2 id=&#34;education&#34;&gt;Education&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;University of Cambridge MPhil in Advanced Computer Science&lt;/em&gt; - Department of Computer Science and Technology; In Progress&#xA;[October 2025 - June 2026]&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;Aston University (Birmingham, UK) BSc Cybersecurity&lt;/em&gt; - School of Engineering; First Class Honours (1:1)&#xA;[September 2019 - June 2022]&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Courses: Operating Systems, Secure Network Services, Software Development, Distributed Systems, Data Encryption, Cybercrime and&#xA;Privacy, Networking, Databases, Secure Programming.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;Bellerbys College (Brighton, UK) Computing Foundation - Computer Science&lt;/em&gt;; First (1:1)&#xA;[September 2018 - August 2019]&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Courses: Programming(JAVA &amp;amp; Python), Databases, Web Development, Systems Analysis, Mathematics.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Dethroning TCP From The Web?</title>
-      <link>http://localhost:1313/posts/dethroningtcpfromtheweb/</link>
-      <pubDate>Sat, 23 Dec 2023 10:23:33 +0400</pubDate>
-      <guid>http://localhost:1313/posts/dethroningtcpfromtheweb/</guid>
-      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Latest Revision: 27th of December&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h4 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h4&gt;&#xA;&lt;p&gt;The content of this post assumes knowlege of basic networking concepts such as the &lt;a href=&#34;https://en.wikipedia.org/wiki/OSI_model&#34;&gt;OSI&lt;/a&gt; model and how the &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP&#34;&gt;HTTP&lt;/a&gt; protocol works to fetch and serve web content.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Ever since Tim Burners-Lee created the World Wide Web, the Transport Control Protocol (TCP) has been the main and up until very recently, the most obvious option for transporting Hypertext Transfer Protocol (HTTP) web exchanges. Understandably, TCP was the transport protocol of choice given that the available options were limited between UDP and TCP, where UDP alone is a lightweight protocol that misses most of the features that the web desires.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>About me</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Sat, 21 Oct 2023 18:19:55 +0400</pubDate>
-      <guid>http://localhost:1313/about/</guid>
-      <description>&lt;p&gt;My name is Ahmed Al-Jabri, in recent years I completed degrees in Computer Science &amp;amp; Cybersecurity. My main areas of interest are Computer Systems and Networking, Distributed Systems and Secure Programming.&lt;br&gt;&lt;/p&gt;&#xA;&lt;p&gt;The intention behind this site is to share a personal blog which will cover a range of technologies, share my thoughts and present technological deep-dives on various topics of interest. You might also find posts discussing ideas and designs for some of my software projects on github.&lt;/p&gt;</description>
-    </item>
+    <atom:link href="http://ahmed-aljabri.github.io/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
