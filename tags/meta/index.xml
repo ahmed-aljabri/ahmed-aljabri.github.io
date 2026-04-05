@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Meta on Ahmed Jabri</title>
+    <link>http://ahmed-aljabri.github.io/tags/meta/</link>
+    <description>Recent content in Meta on Ahmed Jabri</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 04 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://ahmed-aljabri.github.io/tags/meta/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello, Notes</title>
+      <link>http://ahmed-aljabri.github.io/notes/hello-notes/</link>
+      <pubDate>Sat, 04 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://ahmed-aljabri.github.io/notes/hello-notes/</guid>
+      <description>&lt;p&gt;This is the notes section — a place for shorter, more casual writing that doesn&amp;rsquo;t fit the structure of a full blog post.&lt;/p&gt;&#xA;&lt;p&gt;Think of it as a public notebook: half-formed ideas, quick observations, links worth sharing, or updates on things I&amp;rsquo;m working on.&lt;/p&gt;&#xA;&lt;p&gt;Full posts live in the &lt;a href=&#34;http://ahmed-aljabri.github.io/posts/&#34;&gt;Blog&lt;/a&gt; section.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

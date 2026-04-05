@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.148.2">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="portfolio site and personal blog" />
@@ -9,18 +8,18 @@
   <meta name="theme-color" content="#fffffc" id="meta-theme-color" />
 
   
-    <title>Ahmed Al-Jabri</title>
+    <title>Tools | Ahmed Jabri</title>
   
 
   
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Ahmed Al-Jabri" />
+  <meta property="og:title" content="Tools" />
   <meta property="og:description" content="portfolio site and personal blog" />
-  <meta property="og:url" content="http://ahmed-aljabri.github.io/" />
-  <meta property="og:site_name" content="Ahmed Al-Jabri" />
+  <meta property="og:url" content="http://ahmed-aljabri.github.io/tags/tools/" />
+  <meta property="og:site_name" content="Ahmed Jabri" />
 
   
-  <link rel="alternate" type="application/rss&#43;xml" href="http://ahmed-aljabri.github.io/index.xml" title="Ahmed Al-Jabri" />
+  <link rel="alternate" type="application/rss&#43;xml" href="http://ahmed-aljabri.github.io/tags/tools/index.xml" title="Ahmed Jabri" />
   
   <script>
     tailwind.config = {
@@ -188,7 +187,18 @@
       color: var(--color-bq-text);
       font-style: italic;
     }
-
+    blockquote::before {
+      content: "\201C";
+      position: absolute;
+      top: -0.2rem;
+      left: 0.35rem;
+      font-size: 2.5rem;
+      line-height: 1;
+      color: var(--color-accent);
+      opacity: 0.18;
+      font-style: normal;
+      pointer-events: none;
+    }
     blockquote p { margin: 0; }
 
      
@@ -209,22 +219,6 @@
 
      
     hr { border: none; border-top: 1px solid var(--color-border); margin: 2rem 0; }
-
-     
-    .term-cursor {
-      display: inline-block;
-      width: 8px;
-      height: 1em;
-      background: var(--color-prompt);
-      vertical-align: middle;
-      margin-left: 1px;
-      border-radius: 1px;
-      animation: blink 1.1s step-start infinite;
-    }
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: 0; }
-    }
 
      
     #site-header {
@@ -360,7 +354,7 @@
       align-items: flex-start;
       justify-content: space-between;
       gap: 1rem;
-      padding: 0.25rem 0;
+      padding: 0.6rem 0;
     }
     .link-left {
       display: flex;
@@ -620,15 +614,6 @@
     }
 
      
-    .cv-prose p { margin-top: 0.2rem; margin-bottom: 0.2rem; }
-    .cv-prose ul { margin-top: 0.25rem; margin-bottom: 0.25rem; }
-    .cv-prose li { margin-top: 0; margin-bottom: 0; }
-    .cv-prose h2 { margin-top: 1.25rem; }
-    .cv-prose h2:first-child { margin-top: 0; }
-    .cv-prose hr { margin-top: 0.75rem; margin-bottom: 0; }
-    .cv-prose em { color: var(--color-secondary); }
-
-     
      
     .dark .prose {
       color: #c0ccd8;
@@ -689,9 +674,8 @@
 
       
       <a href="/" class="shrink-0 no-underline flex items-center gap-1">
-        <span class="nav-prompt text-base">$</span>
-        <span class="term-cursor" aria-hidden="true"></span>
-        <span class="font-semibold text-[var(--color-text)] hover:text-[var(--color-link)] transition-colors text-base whitespace-nowrap">Ahmed Al-Jabri</span>
+        <span class="nav-prompt text-sm">0x</span>
+        <span class="font-semibold text-[var(--color-text)] hover:text-[var(--color-link)] transition-colors text-sm whitespace-nowrap">Ahmed Jabri</span>
       </a>
 
       
@@ -837,168 +821,26 @@
     <div class="flex-1">
       
 <main class="max-w-4xl mx-auto px-5 py-10">
-
   
-  <div class="home-grid mb-14">
-
-    
-    <div>
-      
-        <img
-          src="/img/avatar.jpg"
-          alt="Portrait"
-          class="portrait"
-          style="max-width:155px"
-          loading="lazy"
-        />
-      
-
-      
-        <div class="prose max-w-none
-          prose-headings:font-semibold
-          prose-h2:text-base prose-h3:text-sm
-          prose-img:rounded prose-img:border prose-img:border-[var(--color-border)]
-          prose-pre:p-0 prose-pre:bg-transparent prose-pre:border-0">
-          <p>I&rsquo;m Ahmed, currently a graduate student at the University of Cambridge pursing an MPhil in Advanced Computer Science. My main interests are in network architecture, protocol engineering, privacy and secure programming.</p>
-<p>The intention behind this site is to act as a portfolio site and also share a personal blog covering technologies I find interesting. You may also find posts discussing ideas and designs for some of my software projects on github.</p>
-<blockquote>
-<p><strong>Disclaimer: This blog isn&rsquo;t an authoritative source, nor do I claim to be an expert on the topics I write about. It&rsquo;s simply where I reflect on ideas, document things I learn, and sometimes challenge conventional thinking in networking and systems design. The ideas and views put forward in this site do not represent any of the organizations I work with.</strong></p></blockquote>
-<p>Any comments/thoughts whether you agree or disagree with what I write is more than welcome.</p>
-<p>You can contact me at: ahmedaljabriedu (at) gmail.com</p>
-
-        </div>
-      
-    </div>
-
-    
-    
-      <aside>
-        <div class="sidebar-card">
-
-          <div class="sidebar-header">More Info & Quick Links</div>
-
-          <div class="sidebar-body">
-
-            
-            
-              <div class="flex flex-col gap-0.5">
-                
-                  <div class="flex items-baseline gap-1.5">
-                    <span style="color:var(--color-muted);font-size:0.75rem;">&#x25CE;</span>
-                    <span style="color:var(--color-secondary);font-size:0.78rem;">Cambridge, UK</span>
-                  </div>
-                
-                  <div class="flex items-baseline gap-1.5">
-                    <span style="color:var(--color-muted);font-size:0.75rem;">&#x25CE;</span>
-                    <span style="color:var(--color-secondary);font-size:0.78rem;">Muscat, Oman</span>
-                  </div>
-                
-              </div>
-            
-
-            
-            
-              <div>
-                <p class="sidebar-section-title">Currently</p>
-                
-                  
-                    <span class="sidebar-link" style="cursor:default;color:var(--color-secondary);">MPhil ACS — in progress</span>
-                  
-                
-                  
-                    <span class="sidebar-link" style="cursor:default;color:var(--color-secondary);">University of Cambridge</span>
-                  
-                
-              </div>
-            
-              <div>
-                <p class="sidebar-section-title">Contact</p>
-                
-                  
-                    <a href="mailto:contact@ahmedaljabri.blog" class="sidebar-link"
-                      target="_blank" rel="noopener">
-                      contact@ahmedaljabri.blog
-                    </a>
-                  
-                
-              </div>
-            
-              <div>
-                <p class="sidebar-section-title">Social</p>
-                
-                  
-                    <a href="https://github.com/ahmed-aljabri" class="sidebar-link"
-                      target="_blank" rel="noopener">
-                      GitHub
-                    </a>
-                  
-                
-                  
-                    <a href="https://www.linkedin.com/in/aljabri-ahmed/" class="sidebar-link"
-                      target="_blank" rel="noopener">
-                      LinkedIn
-                    </a>
-                  
-                
-              </div>
-            
-              <div>
-                <p class="sidebar-section-title">Writing</p>
-                
-                  
-                    <a href="/posts/" class="sidebar-link"
-                      >
-                      Blog posts
-                    </a>
-                  
-                
-                  
-                    <a href="/notes/" class="sidebar-link"
-                      >
-                      Notes
-                    </a>
-                  
-                
-              </div>
-            
-
-          </div>
-        </div>
-      </aside>
-    
-
-  </div>
-
+    <h1 class="text-xl font-bold mb-6" style="color:var(--color-text);">Tools</h1>
   
   
-  
-    <section class="mb-10">
-      <div class="flex items-baseline justify-between mb-4">
-        <h2 class="text-base font-semibold" style="color:var(--color-text);">Recent posts</h2>
-        <a href="/posts/" class="text-xs" style="color:var(--color-secondary);">
-          All posts &rarr;
-        </a>
-      </div>
+    <section class="mb-8">
+      <h2 class="text-xs font-mono font-semibold uppercase tracking-widest pb-2 mb-1
+        border-b border-[var(--color-border)]" style="color:var(--color-muted);">2024</h2>
       <div>
         
           <div class="post-row">
-            <span class="post-row-date">2023-12-23</span>
+            <span class="post-row-date">Mar 01</span>
             <div>
-              <a href="/posts/dethroningtcpfromtheweb/" class="post-row-title">Dethroning TCP From The Web?</a>
-              
-                <p class="post-row-desc">The web’s performance demands is driving TCP’s capabilities to the limit and the emergence of a new player at the transport layer.</p>
-              
+              <a href="/links/beej-network-guide/" class="post-row-title">Beej&#39;s Guide to Network Programming</a>
+              <p class="post-row-desc">The best practical introduction to BSD sockets that exists. Unmatched for learning how TCP/IP programming actually works at the socket level. Free, regularly updated, and genuinely fun to read.</p>
             </div>
           </div>
         
       </div>
     </section>
   
-
-  
-  
-  
-
 </main>
 
     </div>
@@ -1012,20 +854,23 @@
             github
           </a>
         
+          <a href="https://substack.com/@ahmedaljabri" class="no-underline hover:text-[var(--color-link)] transition-colors">
+            substack
+          </a>
+        
       </div>
     
 
     <div class="flex flex-wrap justify-between gap-2 text-xs text-[var(--color-muted)]">
       <span>
-        &copy; 2023&ndash;2026
+        &copy; 2026
         <a href="http://ahmed-aljabri.github.io/" class="no-underline hover:text-[var(--color-link)]">
-          Ahmed Al-Jabri
+          Ahmed Jabri
         </a>.
         
       </span>
       <span>
         Built with <a href="https://gohugo.io" class="no-underline hover:text-[var(--color-link)]">Hugo</a>
-        &middot; Design inspired by <a href="https://anil.recoil.org" class="no-underline hover:text-[var(--color-link)]">anil.recoil.org</a>
       </span>
     </div>
 
