@@ -7,8 +7,15 @@
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 07 Jan 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>To ABC or not to ABC?</title>
+      <link>http://localhost:1313/notes/abc/to-abc-or-not-to-abc/</link>
+      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/abc/to-abc-or-not-to-abc/</guid>
+      <description>&lt;p&gt;As I&amp;rsquo;ve been working on my MPhil dissertation project - evaluating a prototype of &lt;a href=&#34;https://datatracker.ietf.org/doc/draft-ietf-tcpm-ack-rate-request/&#34;&gt;TARR&lt;/a&gt; in ns-3 (part of me wishes it was called &lt;a href=&#34;https://interstellarfilm.fandom.com/wiki/TARS&#34;&gt;TARS&lt;/a&gt;😁 ), I came across an interesting variation in how the sender congestion window is incremented during slow-start and congestion avoidance phases.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://datatracker.ietf.org/doc/html/rfc3465&#34;&gt;RFC 3465&lt;/a&gt; — &lt;em&gt;Appropriate Byte Counting&lt;/em&gt; (ABC) — defines a modification to TCP&amp;rsquo;s slow start and congestion avoidance phases. Instead of incrementing the congestion window by one segment per ACK received, ABC proposes incrementing based on the number of bytes acknowledged. This approach aims to address a real problem &amp;mdash; standard ACK-based incrementing rewards senders unfairly when ACKs are delayed or compressed. ABC aligns growth with actual data delivered. The RFC has been around since 2003 and it remains explicitly marked &lt;strong&gt;Experimental&lt;/strong&gt; - it was never folded into the TCP standard.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>About me</title>
       <link>http://localhost:1313/about/</link>

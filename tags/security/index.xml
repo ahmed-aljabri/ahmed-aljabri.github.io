@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Security on Ahmed Jabri</title>
+    <title>Security on Ahmed Al-Jabri</title>
     <link>http://ahmed-aljabri.github.io/tags/security/</link>
-    <description>Recent content in Security on Ahmed Jabri</description>
+    <description>Recent content in Security on Ahmed Al-Jabri</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 10 Feb 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Apr 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://ahmed-aljabri.github.io/tags/security/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>WireGuard: Next Generation Kernel Network Tunnel</title>
-      <link>http://ahmed-aljabri.github.io/links/wireguard-paper/</link>
-      <pubDate>Sat, 10 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>http://ahmed-aljabri.github.io/links/wireguard-paper/</guid>
-      <description></description>
+      <title>QUIC&#39;s 0-RTT handshake is not free</title>
+      <link>http://ahmed-aljabri.github.io/notes/quic-handshake/</link>
+      <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>http://ahmed-aljabri.github.io/notes/quic-handshake/</guid>
+      <description>&lt;p&gt;QUIC&amp;rsquo;s 0-RTT connection resumption is frequently cited as one of its headline advantages over TLS over TCP. The idea is simple: if a client has previously connected to a server, it can send application data on the very first packet — no round-trip required before data flows.&lt;/p&gt;&#xA;&lt;p&gt;What gets glossed over is the replay attack surface this opens.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-problem-with-0-rtt-data&#34;&gt;The problem with 0-RTT data&lt;/h2&gt;&#xA;&lt;p&gt;0-RTT data is sent before the handshake completes, which means the server has not yet proven to the client that it is the same server from the prior session. An attacker who captures a 0-RTT packet can replay it to the server — potentially triggering the same state-mutating operation multiple times.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

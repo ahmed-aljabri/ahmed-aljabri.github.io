@@ -3,19 +3,19 @@
   <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="portfolio site and personal blog" />
+  <meta name="description" content="RFC 3465 never made the TCP standard, yet Linux, FreeBSD, and lwIP each quietly opted for their own variation of it." />
   <meta name="author" content="" />
   <meta name="theme-color" content="#fffffc" id="meta-theme-color" />
 
   
-    <title>404 Page not found | Ahmed Al-Jabri</title>
+    <title>To ABC or not to ABC? | Ahmed Al-Jabri</title>
   
 
   
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="404 Page not found" />
-  <meta property="og:description" content="portfolio site and personal blog" />
-  <meta property="og:url" content="http://localhost:1313/404.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="To ABC or not to ABC?" />
+  <meta property="og:description" content="RFC 3465 never made the TCP standard, yet Linux, FreeBSD, and lwIP each quietly opted for their own variation of it." />
+  <meta property="og:url" content="http://localhost:1313/notes/abc/to-abc-or-not-to-abc/" />
   <meta property="og:site_name" content="Ahmed Al-Jabri" />
 
   
@@ -848,18 +848,158 @@
 
     <div class="flex-1">
       
-<main class="max-w-4xl mx-auto px-5 py-20 text-center">
-  <p class="font-mono text-5xl font-bold mb-4" style="color:var(--color-accent);">404</p>
-  <h1 class="text-xl font-semibold mb-2" style="color:var(--color-text);">Page not found</h1>
-  <p class="mb-6 text-sm" style="color:var(--color-secondary);">
-    The page you're looking for doesn't exist or has been moved.
-  </p>
-  <a href="/"
-    class="inline-block px-4 py-2 rounded border border-[var(--color-border)]
-    text-sm no-underline hover:border-[var(--color-link)] transition-colors"
-    style="color:var(--color-text);">
-    &larr; Go home
-  </a>
+<main class="max-w-3xl mx-auto px-5 py-10">
+  <article>
+
+    <header class="mb-6">
+      <div class="flex items-stretch gap-3 mb-2">
+        <span style="width:3px;background:var(--color-accent);border-radius:2px;flex-shrink:0;"></span>
+        <h1 class="text-xl font-bold leading-snug" style="color:var(--color-text);">
+          To ABC or not to ABC?
+        </h1>
+      </div>
+      
+      <div class="post-meta flex flex-wrap items-center gap-x-2 gap-y-1">
+        <time datetime="2026-04-05 00:00:00 &#43;0000 UTC" class="font-mono">2026-04-05</time>
+        <span>&mdash;</span>
+        <span style="color:var(--color-muted);">note</span>
+        
+          <span>&middot;</span>
+          <span>1078 words</span>
+        
+        
+          <span>&middot;</span>
+          <div class="flex flex-wrap gap-1">
+            
+              <a href="/tags/tcp" class="post-tag">TCP</a>
+            
+              <a href="/tags/congestion-control" class="post-tag">congestion-control</a>
+            
+              <a href="/tags/protocols" class="post-tag">protocols</a>
+            
+              <a href="/tags/networking" class="post-tag">networking</a>
+            
+          </div>
+        
+      </div>
+    </header>
+
+    <div class="prose max-w-none
+      prose-headings:font-semibold
+      prose-h2:text-base prose-h3:text-sm
+      prose-img:rounded prose-img:border prose-img:border-[var(--color-border)]
+      prose-pre:p-0 prose-pre:bg-transparent prose-pre:border-0">
+      <p>As I&rsquo;ve been working on my MPhil dissertation project - evaluating a prototype of <a href="https://datatracker.ietf.org/doc/draft-ietf-tcpm-ack-rate-request/">TARR</a> in ns-3 (part of me wishes it was called <a href="https://interstellarfilm.fandom.com/wiki/TARS">TARS</a>😁 ), I came across an interesting variation in how the sender congestion window is incremented during slow-start and congestion avoidance phases.</p>
+<p><a href="https://datatracker.ietf.org/doc/html/rfc3465">RFC 3465</a> — <em>Appropriate Byte Counting</em> (ABC) — defines a modification to TCP&rsquo;s slow start and congestion avoidance phases. Instead of incrementing the congestion window by one segment per ACK received, ABC proposes incrementing based on the number of bytes acknowledged. This approach aims to address a real problem &mdash; standard ACK-based incrementing rewards senders unfairly when ACKs are delayed or compressed. ABC aligns growth with actual data delivered. The RFC has been around since 2003 and it remains explicitly marked <strong>Experimental</strong> - it was never folded into the TCP standard.</p>
+<p>When it comes to TARR - a new option that allows a TCP sender to request the receiver change their acknowledgment frequency (further than existing delayed-ack mechanisms - ACK every 2 segments - or immediately at times) - this has direct implications on the congestion window growth and subsequently, the throughput realised. Stretched ACKs are expected to slow down cwnd growth during slow start without ABC, and with ABC, create bursty flows (e.g. cwnd increases by 10xSMSS upon receiving a single ACK acknowledging 10 segments). Both of these expectations are undesired!</p>
+<p>The latest <a href="https://datatracker.ietf.org/doc/draft-ietf-tcpm-ack-rate-request/">TARR draft</a> specifically states:</p>
+<blockquote>
+<p>In order to avoid slow cwnd opening, a TCP sender SHOULD NOT use the
+TARR option to produce Stretch ACKs during Slow Start.</p></blockquote>
+<p>The draft also mentions that ABC may solve the slow congestion window opening problem, but is still only an experimental method. Using a basic simulation in ns3, I was able to confirm this expectation:</p>
+<p><img src="/img/hs_cwnd_evolution.png" alt="ABC"></p>
+<p>In standard TCP slow-start phase (right), as expected, using stretched acks slows down the congestion window opening notably compared to the standard method or even existing delayed-ack approach. Likewise, with ABC enabled (left), stretched acks do not suffer as much!</p>
+<p>Motivated by the initial results and the discussion I had with two of TARR&rsquo;s authors (Prof. Jon Crowcroft and Carles Gomez), I was interested to see if any notable TCP stacks actually use ABC. Here is what I found so far:</p>
+<h2 id="linux">Linux</h2>
+<p>Looking at the kernel&rsquo;s slow-start path, they explicitly state:</p>
+<blockquote>
+<p>We do not implement RFC3465 Appropriate Byte Counting (ABC) per se but something better;)</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>__bpf_kfunc u32 <span style="color:#a6e22e">tcp_slow_start</span>(<span style="color:#66d9ef">struct</span> tcp_sock <span style="color:#f92672">*</span>tp, u32 acked)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	u32 cwnd <span style="color:#f92672">=</span> <span style="color:#a6e22e">min</span>(<span style="color:#a6e22e">tcp_snd_cwnd</span>(tp) <span style="color:#f92672">+</span> acked, tp<span style="color:#f92672">-&gt;</span>snd_ssthresh);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	acked <span style="color:#f92672">-=</span> cwnd <span style="color:#f92672">-</span> <span style="color:#a6e22e">tcp_snd_cwnd</span>(tp);
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">tcp_snd_cwnd_set</span>(tp, <span style="color:#a6e22e">min</span>(cwnd, tp<span style="color:#f92672">-&gt;</span>snd_cwnd_clamp));
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> acked;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>This is ABC in essence (taking into account the bytes acknowledged <code>acked</code> when updating congestion window), just capped by the sender&rsquo;s slow-start threshold <code>snd_ssthresh</code> - with that it seems they allow the TCP flow cwnd to overshoot at first (ssthresh is set to a very large value at the start) before it is adjusted after experiencing loss/congestion.</p>
+<h2 id="freebsd">FreeBSD</h2>
+<p>FreeBSD, I have found, takes a stricter approach but closer to the actual ABC RFC recommendation, capping the byte increment by a variable - default is 2x SMSS (Sender Maximum Segment Size) - despite the total bytes acknowledged, the cwnd will not jump past the 2xSMSS cap (or the configurable variable) in one go.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	 * Regular in-order ACK, open the congestion window.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	 * The congestion control state we&#39;re in is slow start.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	 *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	 * slow start: cwnd &lt;= ssthresh
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	 *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	 * slow start and ABC (RFC 3465):
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	 *   Grow cwnd exponentially by the amount of data
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	 *   ACKed capping the max increment per ACK to
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	 *   (abc_l_var * maxseg) bytes.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	 *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	 * slow start without ABC (RFC 5681):
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	 *   Grow cwnd exponentially by maxseg per ACK.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	 */</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (V_tcp_do_rfc3465) {
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		 * In slow-start with ABC enabled and no RTO in sight?
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		 * (Must not use abc_l_var &gt; 1 if slow starting after
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		 * an RTO. On RTO, snd_nxt = snd_una, so the
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		 * snd_nxt == snd_max check is sufficient to
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		 * handle this).
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		 *
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		 * XXXLAS: Find a way to signal SS after RTO that
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		 * doesn&#39;t rely on tcpcb vars.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">		 */</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">uint16_t</span> abc_val;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (ccv<span style="color:#f92672">-&gt;</span>flags <span style="color:#f92672">&amp;</span> CCF_USE_LOCAL_ABC)
+</span></span><span style="display:flex;"><span>			abc_val <span style="color:#f92672">=</span> ccv<span style="color:#f92672">-&gt;</span>labc;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>			abc_val <span style="color:#f92672">=</span> V_tcp_abc_l_var;
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">CCV</span>(ccv, snd_nxt) <span style="color:#f92672">==</span> <span style="color:#a6e22e">CCV</span>(ccv, snd_max))
+</span></span><span style="display:flex;"><span>			incr <span style="color:#f92672">=</span> <span style="color:#a6e22e">min</span>(ccv<span style="color:#f92672">-&gt;</span>bytes_this_ack,
+</span></span><span style="display:flex;"><span>			           ccv<span style="color:#f92672">-&gt;</span>nsegs <span style="color:#f92672">*</span> abc_val <span style="color:#f92672">*</span> mss);
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>			incr <span style="color:#f92672">=</span> <span style="color:#a6e22e">min</span>(ccv<span style="color:#f92672">-&gt;</span>bytes_this_ack, mss);
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">/* ABC is on by default, so incr equals 0 frequently. */</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> (incr <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">min</span>(cw <span style="color:#f92672">+</span> incr, TCP_MAXWIN <span style="color:#f92672">&lt;&lt;</span> <span style="color:#a6e22e">CCV</span>(ccv, snd_scale));
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> cw;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="lwip">LwIP</h2>
+<p>On the IoT side of things, LwIP - a popular TCP stack for constrained devices - takes a similar approach. The sender&rsquo;s congestion window growth is capped at a hardcoded value: 2xSMSS (goes down to 1xSMSS if close to an RTO event).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (pcb<span style="color:#f92672">-&gt;</span>state <span style="color:#f92672">&gt;=</span> ESTABLISHED) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (pcb<span style="color:#f92672">-&gt;</span>cwnd <span style="color:#f92672">&lt;</span> pcb<span style="color:#f92672">-&gt;</span>ssthresh) {
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">tcpwnd_size_t</span> increase;
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e">/* limit to 1 SMSS segment during period following RTO */</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#66d9ef">u8_t</span> num_seg <span style="color:#f92672">=</span> (pcb<span style="color:#f92672">-&gt;</span>flags <span style="color:#f92672">&amp;</span> TF_RTO) <span style="color:#f92672">?</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>;
+</span></span><span style="display:flex;"><span>          <span style="color:#75715e">/* RFC 3465, section 2.2 Slow Start */</span>
+</span></span><span style="display:flex;"><span>          increase <span style="color:#f92672">=</span> <span style="color:#a6e22e">LWIP_MIN</span>(acked, (<span style="color:#66d9ef">tcpwnd_size_t</span>)(num_seg <span style="color:#f92672">*</span> pcb<span style="color:#f92672">-&gt;</span>mss));
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">TCP_WND_INC</span>(pcb<span style="color:#f92672">-&gt;</span>cwnd, increase);
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">LWIP_DEBUGF</span>(TCP_CWND_DEBUG, (<span style="color:#e6db74">&#34;tcp_receive: slow start cwnd %&#34;</span>TCPWNDSIZE_F<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, pcb<span style="color:#f92672">-&gt;</span>cwnd));
+</span></span><span style="display:flex;"><span>        } 
+</span></span></code></pre></div><h2 id="takeaways">Takeaways</h2>
+<p>Despite ABC being an experimental feature, there are some notable stacks that implement variations of ABC out there! Which means that for new extensions to TCP like TARR, it would be useful to evaluate how TARR behaves with ABC enabled. My initial experiments so far show promising results but need to be evaluated more extensively before making a proper case. For instance, using stretched acks during slow-start may lead to reversed results if RTTs drift to a point that the acks are not received in time to maintain the feedback loop, with that potentially causing an RTO event at which the cwnd will be drastically reduced.</p>
+<p>Despite that, given how ABC seems to address the slow congestion window opening during slow-start, I could imagine cases where using stretched ACKs from the start, with ABC enabled, may not be a bad idea when compared against changing the ack ratio multiple times in a connection&rsquo;s lifetime (e.g. risk of middlebox interference) - however I am yet to observe and verify the cost of repetitive TARR requests to change the ack ratio during a connection.</p>
+<p>Another thing worth noting is that although standardisation can often drive adoption, some ideas propagate far ahead of standardisation efforts - the variety of ABC-like implementations is an example of that. From an implementers&rsquo; perspective, it makes it more challenging to evaluate new extensions (what ABC variant do we test with?) - possibly highlighting where standardisation catching up would help.</p>
+
+    </div>
+
+    
+    <footer class="mt-10 pt-5 border-t border-[var(--color-border)]
+      flex items-center justify-between flex-wrap gap-3">
+      <a href="/notes/" class="text-sm" style="color:var(--color-secondary);">
+        &larr; All notes
+      </a>
+      
+        <div class="flex flex-wrap gap-1">
+          
+            <a href="/tags/tcp" class="post-tag">TCP</a>
+          
+            <a href="/tags/congestion-control" class="post-tag">congestion-control</a>
+          
+            <a href="/tags/protocols" class="post-tag">protocols</a>
+          
+            <a href="/tags/networking" class="post-tag">networking</a>
+          
+        </div>
+      
+    </footer>
+
+  </article>
 </main>
 
     </div>
