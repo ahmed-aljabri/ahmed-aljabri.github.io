@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ahmed Al-Jabri</title>
-    <link>http://localhost:1313/</link>
+    <link>http://localhost:1314/</link>
     <description>Recent content on Ahmed Al-Jabri</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Sun, 05 Apr 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1314/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>To ABC or not to ABC?</title>
-      <link>http://localhost:1313/notes/abc/to-abc-or-not-to-abc/</link>
+      <link>http://localhost:1314/notes/abc/to-abc-or-not-to-abc/</link>
       <pubDate>Sun, 05 Apr 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/notes/abc/to-abc-or-not-to-abc/</guid>
+      <guid>http://localhost:1314/notes/abc/to-abc-or-not-to-abc/</guid>
       <description>&lt;p&gt;As I&amp;rsquo;ve been working on my MPhil dissertation project - evaluating a prototype of &lt;a href=&#34;https://datatracker.ietf.org/doc/draft-ietf-tcpm-ack-rate-request/&#34;&gt;TARR&lt;/a&gt; in ns-3 (part of me wishes it was called &lt;a href=&#34;https://interstellarfilm.fandom.com/wiki/TARS&#34;&gt;TARS&lt;/a&gt;😁 ), I came across an interesting variation in how the sender congestion window is incremented during slow-start and congestion avoidance phases.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://datatracker.ietf.org/doc/html/rfc3465&#34;&gt;RFC 3465&lt;/a&gt; — &lt;em&gt;Appropriate Byte Counting&lt;/em&gt; (ABC) — defines a modification to TCP&amp;rsquo;s slow start and congestion avoidance phases. Instead of incrementing the congestion window by one segment per ACK received, ABC proposes incrementing based on the number of bytes acknowledged. This approach aims to address a real problem &amp;mdash; standard ACK-based incrementing rewards senders unfairly when ACKs are delayed or compressed. ABC aligns growth with actual data delivered. The RFC has been around since 2003 and it remains explicitly marked &lt;strong&gt;Experimental&lt;/strong&gt; - it was never folded into the TCP standard.&lt;/p&gt;</description>
     </item>
     <item>
       <title>About me</title>
-      <link>http://localhost:1313/about/</link>
+      <link>http://localhost:1314/about/</link>
       <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/about/</guid>
+      <guid>http://localhost:1314/about/</guid>
       <description>&lt;p&gt;I&amp;rsquo;m currently a graduate student at the University of Cambridge pursing an MPhil in Advanced Computer Science. My main interests are in network architectures, protocol engineering, privacy and secure programming.&lt;/p&gt;&#xA;&lt;p&gt;Some of my recent work was around &lt;a href=&#34;https://dnsprivacy.org/&#34;&gt;DNS Privacy&lt;/a&gt;, &lt;a href=&#34;https://orbi.uliege.be/bitstream/2268/235136/1/paper.pdf&#34;&gt;Transport Layer Ossification&lt;/a&gt; and more recently, writing a prototype and evaluation of &lt;a href=&#34;https://datatracker.ietf.org/doc/draft-ietf-tcpm-ack-rate-request/&#34;&gt;TARR Option Extension for TCP&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;This site is intended to be a portfolio site as well as a personal blog covering technologies I find interesting. You may also find posts discussing ideas and designs for some of my software projects on github.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Dethroning TCP From The Web?</title>
-      <link>http://localhost:1313/posts/dethroningtcpfromtheweb/</link>
+      <link>http://localhost:1314/posts/dethroningtcpfromtheweb/</link>
       <pubDate>Sat, 23 Dec 2023 10:23:33 +0400</pubDate>
-      <guid>http://localhost:1313/posts/dethroningtcpfromtheweb/</guid>
+      <guid>http://localhost:1314/posts/dethroningtcpfromtheweb/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Latest Revision: 27th of December&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;h4 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h4&gt;&#xA;&lt;p&gt;The content of this post assumes knowlege of basic networking concepts such as the &lt;a href=&#34;https://en.wikipedia.org/wiki/OSI_model&#34;&gt;OSI&lt;/a&gt; model and how the &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP&#34;&gt;HTTP&lt;/a&gt; protocol works to fetch and serve web content.&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Ever since Tim Burners-Lee created the World Wide Web, the Transport Control Protocol (TCP) has been the main and up until very recently, the most obvious option for transporting Hypertext Transfer Protocol (HTTP) web exchanges. Understandably, TCP was the transport protocol of choice given that the available options were limited between UDP and TCP, where UDP alone is a lightweight protocol that misses most of the features that the web desires.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Curriculum Vitae</title>
-      <link>http://localhost:1313/cv/</link>
+      <link>http://localhost:1314/cv/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/cv/</guid>
+      <guid>http://localhost:1314/cv/</guid>
       <description>&lt;hr&gt;&#xA;&lt;h2 id=&#34;education&#34;&gt;Education&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;University of Cambridge MPhil in Advanced Computer Science&lt;/em&gt; - Department of Computer Science and Technology; In Progress&#xA;[October 2025 - June 2026]&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;em&gt;Aston University (Birmingham, UK) BSc Cybersecurity&lt;/em&gt; - School of Engineering; First Class Honours (1:1)&#xA;[September 2019 - June 2022]&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Courses: Operating Systems, Secure Network Services, Software Development, Distributed Systems, Data Encryption, Cybercrime and&#xA;Privacy, Networking, Databases, Secure Programming.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;Bellerbys College (Brighton, UK) Computing Foundation - Computer Science&lt;/em&gt;; First (1:1)&#xA;[September 2018 - August 2019]&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Courses: Programming(JAVA &amp;amp; Python), Databases, Web Development, Systems Analysis, Mathematics.&lt;/p&gt;</description>
     </item>
   </channel>

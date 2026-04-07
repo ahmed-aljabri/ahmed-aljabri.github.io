@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1314&amp;path=livereload" data-no-instant defer></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="RFC 3465 / ABC is yet to make the TCP standard, yet it is deployed (with variation) in notable TCP stacks - what does that mean for new TCP extensions like TARR?" />
@@ -15,7 +15,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:title" content="To ABC or not to ABC?" />
   <meta property="og:description" content="RFC 3465 / ABC is yet to make the TCP standard, yet it is deployed (with variation) in notable TCP stacks - what does that mean for new TCP extensions like TARR?" />
-  <meta property="og:url" content="http://localhost:1313/notes/abc/to-abc-or-not-to-abc/" />
+  <meta property="og:url" content="http://localhost:1314/notes/abc/to-abc-or-not-to-abc/" />
   <meta property="og:site_name" content="Ahmed Al-Jabri" />
 
   
@@ -77,7 +77,8 @@
   <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
 
   
-  <link rel="stylesheet" id="hljs-theme" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/tokyo-night-dark.min.css" />
+  <link rel="stylesheet" id="hljs-light" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" />
+  <link rel="stylesheet" id="hljs-dark"  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" disabled />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 
   <style>
@@ -113,9 +114,6 @@
       --color-accent:      #b85c38;
       --color-bq-text:     #4a4a4a;
       --color-prompt:      #b85c38;
-      --color-code-bg:     #fdf0eb;
-      --color-code-border: #e8c4b0;
-      --color-code-text:   #7a3018;
     }
     .dark {
       --color-bg:          #0d1117;
@@ -132,9 +130,6 @@
       --color-accent:      #c9784e;
       --color-bq-text:     #b1bac4;
       --color-prompt:      #c9784e;
-      --color-code-bg:     #2a1810;
-      --color-code-border: #5a3020;
-      --color-code-text:   #f0b896;
     }
 
      
@@ -165,55 +160,27 @@
     :not(pre) > code {
       font-family: ui-monospace, 'SF Mono', 'Cascadia Code', Consolas, monospace;
       font-size: 0.82em;
-      background: var(--color-code-bg);
-      color: var(--color-code-text);
+      background: var(--color-surface-alt);
       padding: 0.15em 0.4em;
       border-radius: 3px;
-      border: 1px solid var(--color-code-border);
+      border: 1px solid var(--color-border);
     }
-     
-    .code-block {
-      position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-      border: 1px solid #292e42;
-    }
-    .code-copy {
-      position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
-      background: #16161e;
-      border: 1px solid #3b4261;
-      border-radius: 4px;
-      color: #565f89;
-      font-size: 0.65rem;
-      padding: 0.2rem 0.5rem;
-      cursor: pointer;
-      font-family: ui-monospace, 'SF Mono', Consolas, monospace;
-      transition: border-color 0.15s, color 0.15s, opacity 0.15s;
-      opacity: 0;
-      line-height: 1.5;
-    }
-    .code-block:hover .code-copy { opacity: 1; }
-    .code-copy:hover { border-color: var(--color-accent); color: var(--color-accent); }
-    .code-copy.copied { color: #9ece6a; border-color: #9ece6a; opacity: 1; }
     pre {
-      background: #1a1b26;
-      border: none;
-      border-radius: 0;
-      margin: 0;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: 6px;
       padding: 1rem;
       overflow-x: auto;
       font-size: 0.82rem;
       line-height: 1.55;
     }
-    pre code { background: none; border: none; padding: 0; font-size: inherit; color: #a9b1d6; }
-    pre code.hljs { padding: 0 !important; background: none !important; color: #a9b1d6 !important; }
+    pre code { background: none; border: none; padding: 0; font-size: inherit; }
+    pre code.hljs { padding: 0 !important; background: none !important; }
 
      
     blockquote {
       position: relative;
-      border-left: 3px solid var(--color-accent) !important;
+      border-left: 3px solid var(--color-accent);
       padding: 0.5rem 1rem;
       margin-left: 0;
       color: var(--color-bq-text);
@@ -651,11 +618,6 @@
     }
 
      
-     
-    .prose pre, .prose .code-block { margin-top: 1.25rem; margin-bottom: 1.25rem; }
-    .code-block pre { margin: 0 !important; }
-
-     
     .cv-prose p { margin-top: 0.2rem; margin-bottom: 0.2rem; }
     .cv-prose ul { margin-top: 0.25rem; margin-bottom: 0.25rem; }
     .cv-prose li { margin-top: 0; margin-bottom: 0; }
@@ -692,24 +654,9 @@
     .prose a:hover {
       text-decoration-color: var(--color-link);
     }
-    .prose :not(pre) > code {
-      background: var(--color-code-bg) !important;
-      color: var(--color-code-text) !important;
-      border: 1px solid var(--color-code-border);
-    }
     .dark .prose hr {
       border-color: var(--color-border);
     }
-    .dark blockquote,
-    .dark .prose blockquote,
-    .dark .prose blockquote p {
-      color: var(--color-bq-text) !important;
-    }
-    .dark blockquote,
-    .dark .prose blockquote {
-      border-left-color: var(--color-accent) !important;
-    }
-
   </style>
 
   
@@ -864,40 +811,23 @@
       var isDark = html.classList.toggle('dark');
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
       document.getElementById('meta-theme-color').content = isDark ? '#0d1117' : '#fffffc';
+      
+      document.getElementById('hljs-light').disabled = isDark;
+      document.getElementById('hljs-dark').disabled  = !isDark;
       updateIcon();
     });
 
+    
+    if (html.classList.contains('dark')) {
+      document.getElementById('hljs-light').disabled = true;
+      document.getElementById('hljs-dark').disabled  = false;
+    }
   })();
 
   
   document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('pre code').forEach(function(block) {
       hljs.highlightElement(block);
-
-      var pre = block.parentElement;
-
-      
-      var wrapper = document.createElement('div');
-      wrapper.className = 'code-block';
-      pre.parentNode.insertBefore(wrapper, pre);
-      wrapper.appendChild(pre);
-
-      
-      var copyBtn = document.createElement('button');
-      copyBtn.className = 'code-copy';
-      copyBtn.textContent = 'copy';
-      copyBtn.addEventListener('click', function() {
-        navigator.clipboard.writeText(block.textContent).then(function() {
-          copyBtn.textContent = 'copied!';
-          copyBtn.classList.add('copied');
-          setTimeout(function() {
-            copyBtn.textContent = 'copy';
-            copyBtn.classList.remove('copied');
-          }, 2000);
-        });
-      });
-
-      wrapper.appendChild(copyBtn);
     });
   });
 </script>
@@ -908,12 +838,9 @@
   <article>
 
     <header class="mb-6">
-      <div class="flex items-stretch gap-3 mb-2">
-        <span style="width:3px;background:var(--color-accent);border-radius:2px;flex-shrink:0;"></span>
-        <h1 class="text-xl font-bold leading-snug" style="color:var(--color-text);">
-          To ABC or not to ABC?
-        </h1>
-      </div>
+      <h1 class="text-xl font-bold leading-snug mb-2" style="color:var(--color-text);">
+        To ABC or not to ABC?
+      </h1>
       
       <div class="post-meta flex flex-wrap items-center gap-x-2 gap-y-1">
         <time datetime="2026-04-05 00:00:00 &#43;0000 UTC" class="font-mono">2026-04-05</time>
@@ -921,7 +848,7 @@
         <span style="color:var(--color-muted);">note</span>
         
           <span>&middot;</span>
-          <span>1078 words</span>
+          <span>1074 words</span>
         
         
           <span>&middot;</span>
@@ -954,8 +881,8 @@
 TARR option to produce Stretch ACKs during Slow Start.</p></blockquote>
 <p>The draft also mentions that ABC may solve the slow congestion window opening problem, but is still only an experimental method. Using a basic simulation in ns3, I was able to confirm this expectation:</p>
 <p><img src="/img/hs_cwnd_evolution.png" alt="ABC"></p>
-<p>In standard TCP slow-start phase (right), as expected, using stretched acks slows down the congestion window opening notably compared to the standard method or even existing delayed-ack approach. Likewise, with ABC enabled (left), stretched acks do not suffer as much!</p>
-<p>Motivated by the initial results and the discussion I had with two of TARR&rsquo;s authors (Prof. Jon Crowcroft and Carles Gomez), I was interested to see if any notable TCP stacks actually use ABC. Here is what I found so far:</p>
+<p>In standard TCP slow-start phase (right), as expected, using stretched acks slows down the congestion window opening notably compared to the standard method or even existing delayed-ack approach. With ABC enabled (left), stretched acks do not suffer as much!</p>
+<p>Motivated by the initial results and the discussion I had with two of TARR&rsquo;s authors (<a href="https://www.cst.cam.ac.uk/people/jac22">Prof. Jon Crowcroft</a> and <a href="https://sites.google.com/site/carlesgomez/">Carles Gomez</a>), I was interested to see if any notable TCP stacks actually use ABC. Here is what I found so far:</p>
 <h2 id="linux">Linux</h2>
 <p>Looking at the kernel&rsquo;s slow-start path, they explicitly state:</p>
 <blockquote>
@@ -1029,7 +956,7 @@ TARR option to produce Stretch ACKs during Slow Start.</p></blockquote>
 </span></span><span style="display:flex;"><span>        } 
 </span></span></code></pre></div><h2 id="takeaways">Takeaways</h2>
 <p>Despite ABC being an experimental feature, there are some notable stacks that implement variations of ABC out there! Which means that for new extensions to TCP like TARR, it would be useful to evaluate how TARR behaves with ABC enabled. My initial experiments so far show promising results but need to be evaluated more extensively before making a proper case. For instance, using stretched acks during slow-start may lead to reversed results if RTTs drift to a point that the acks are not received in time to maintain the feedback loop, with that potentially causing an RTO event at which the cwnd will be drastically reduced.</p>
-<p>Despite that, given how ABC seems to address the slow congestion window opening during slow-start, I could imagine cases where using stretched ACKs from the start, with ABC enabled, may not be a bad idea when compared against changing the ack ratio multiple times in a connection&rsquo;s lifetime (e.g. risk of middlebox interference) - however I am yet to observe and verify the cost of repetitive TARR requests to change the ack ratio during a connection.</p>
+<p>Despite that, given how ABC seems to address the slow congestion window opening, I could imagine cases where using stretched ACKs during slow-start, with ABC enabled, may not be a bad idea when compared against changing the ack ratio multiple times in a connection&rsquo;s lifetime (e.g. risk of middlebox interference) - however, I am yet to observe and verify the cost of repetitive TARR requests to change the ack ratio during a connection.</p>
 <p>Another thing worth noting is that although standardisation can often drive adoption, some ideas propagate far ahead of standardisation efforts - the variety of ABC-like implementations is an example of that. From an implementers&rsquo; perspective, it makes it more challenging to evaluate new extensions (what ABC variant do we test with?) - possibly highlighting where standardisation catching up would help.</p>
 
     </div>
@@ -1075,7 +1002,7 @@ TARR option to produce Stretch ACKs during Slow Start.</p></blockquote>
     <div class="flex flex-wrap justify-between gap-2 text-xs text-[var(--color-muted)]">
       <span>
         &copy; 2023&ndash;2026
-        <a href="http://localhost:1313/" class="no-underline hover:text-[var(--color-link)]">
+        <a href="http://localhost:1314/" class="no-underline hover:text-[var(--color-link)]">
           Ahmed Al-Jabri
         </a>.
         
